@@ -112,27 +112,6 @@ fun DetailsView(id: Int) {
               //  DogInfoCard(name, gender, location)
             }
         }
-
-        // My story details
-        item {
-            player.apply {
-
-                Spacer(modifier = Modifier.height(24.dp))
-                Title(title = "Bio")
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(
-                    text = bio,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp, 0.dp, 16.dp, 0.dp),
-                    color = colorResource(id = R.color.text),
-                    style = MaterialTheme.typography.body2,
-                    textAlign = TextAlign.Start
-                )
-            }
-        }
-
-        // Quick info
         item {
             player.apply {
 
@@ -147,11 +126,31 @@ fun DetailsView(id: Int) {
                 ) {
                     InfoCard(title = "Age", value = player.age.toString().plus(" yrs"))
                     InfoCard(title = "Weight", value = weight.toString().plus("Kg"))
-                    InfoCard(title = "Born", value = born)
+                    InfoCard(title = "Height", value = player.height.toString().plus(" cm"))
 
                 }
             }
         }
+        // My story details
+        item {
+            player.apply {
+
+
+                Spacer(modifier = Modifier.height(26.dp))
+                Text(
+                    text = bio,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp, 0.dp, 16.dp, 0.dp),
+                    color = colorResource(id = R.color.text),
+                    style = MaterialTheme.typography.body2,
+                    textAlign = TextAlign.Start
+                )
+            }
+        }
+
+        // Quick info
+
 
         // Owner info
         item {
