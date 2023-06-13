@@ -17,7 +17,7 @@ package dev.spikeysanju.wiggles.data
 
 import dev.spikeysanju.wiggles.R
 import dev.spikeysanju.wiggles.model.Player
-import dev.spikeysanju.wiggles.model.Owner
+
 //https://www.psaworldtour.com/view-player/player/amanda-sobhy/
 object FakePlayerApi {
 
