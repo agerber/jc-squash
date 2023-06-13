@@ -18,7 +18,7 @@ package dev.spikeysanju.wiggles.data
 import dev.spikeysanju.wiggles.R
 import dev.spikeysanju.wiggles.model.Dog
 import dev.spikeysanju.wiggles.model.Owner
-
+//https://www.psaworldtour.com/view-player/player/amanda-sobhy/
 object FakeDogDatabase {
     val owner = Owner("Spikey Sanju", "Developer & Pet Lover", R.drawable.owner)
     val dogList = listOf(
