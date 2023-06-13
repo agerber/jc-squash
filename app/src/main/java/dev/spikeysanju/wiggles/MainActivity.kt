@@ -26,7 +26,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import dev.spikeysanju.wiggles.ui.theme.MyTheme
-import dev.spikeysanju.wiggles.view.WigglesMain
+import dev.spikeysanju.wiggles.view.PsaMain
 @ExperimentalAnimationApi
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             MyTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    WigglesMain(toggleTheme)
+                    PsaMain(toggleTheme)
                 }
             }
         }
@@ -59,6 +59,6 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-        WigglesMain(toggleTheme = { })
+        PsaMain(toggleTheme = { })
     }
 }

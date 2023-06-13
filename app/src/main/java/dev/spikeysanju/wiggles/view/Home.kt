@@ -15,7 +15,10 @@
  */
 package dev.spikeysanju.wiggles.view
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -29,24 +32,29 @@ import dev.spikeysanju.wiggles.model.Player
 
 @Composable
 fun Home(navController: NavHostController, playerList: List<Player>, toggleTheme: () -> Unit) {
-    LazyColumn {
-        item {
-            TopBar(
-                onToggle = {
-                    toggleTheme()
+
+
+    Column(modifier = Modifier.fillMaxHeight().fillMaxWidth()) {
+        TopBar(
+            onToggle = {
+                //todo filter between Men and Women
+            }
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        LazyColumn {
+
+            items(playerList) {
+                playerList.forEach {
+                    ItemDogCard(
+                        it,
+                        onItemClicked = { player ->
+                            navController.navigate("details/${player.id}/${player.name}/${player.location}")
+                        }
+                    )
                 }
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-        }
-        items(playerList) {
-            playerList.forEach {
-                ItemDogCard(
-                    it,
-                    onItemClicked = { dog ->
-                        navController.navigate("details/${dog.id}/${dog.name}/${dog.location}")
-                    }
-                )
             }
         }
     }
+
+
 }
