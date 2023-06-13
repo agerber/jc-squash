@@ -51,8 +51,7 @@ import androidx.navigation.NavController
 import dev.spikeysanju.wiggles.R
 import dev.spikeysanju.wiggles.component.DogInfoCard
 import dev.spikeysanju.wiggles.component.InfoCard
-import dev.spikeysanju.wiggles.component.OwnerCard
-import dev.spikeysanju.wiggles.data.FakeDogDatabase
+import dev.spikeysanju.wiggles.data.FakePlayerApi
 
 @Composable
 fun Details(navController: NavController, id: Int) {
@@ -92,7 +91,7 @@ fun DetailsView(id: Int) {
             .background(color = colorResource(id = R.color.background))
     ) {
 
-        val dog = FakeDogDatabase.playerLists[id]
+        val dog = FakePlayerApi.playerLists[id]
 
         // Basic details
         item {
@@ -160,9 +159,7 @@ fun DetailsView(id: Int) {
                 Spacer(modifier = Modifier.height(24.dp))
                 Title(title = "Owner info")
                 Spacer(modifier = Modifier.height(16.dp))
-                owner.apply {
-                    OwnerCard(name, bio, image)
-                }
+
             }
         }
 

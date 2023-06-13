@@ -18,6 +18,7 @@ package dev.spikeysanju.wiggles.model
 data class Player(
     val id: Int,
     val rank: Int,
+    val country: String,
     val name: String,
     val age: Int,
     val gender: String,
@@ -25,8 +26,8 @@ data class Player(
     val weight: Double,
     val location: String,
     val image: Int,
-    val bio: String,
-    val owner: Owner
+    val bio: String
+
 
 
 )

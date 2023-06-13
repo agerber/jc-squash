@@ -24,7 +24,7 @@ import androidx.navigation.compose.navArgument
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-import dev.spikeysanju.wiggles.data.FakeDogDatabase
+import dev.spikeysanju.wiggles.data.FakePlayerApi
 import dev.spikeysanju.wiggles.navigation.Screen
 
 @ExperimentalAnimationApi
@@ -53,7 +53,7 @@ fun WigglesMain(toggleTheme: () -> Unit) {
                 ) + fadeIn(animationSpec = tween(300))
             },
         ) {
-            Home(navController, FakeDogDatabase.playerLists, toggleTheme)
+            Home(navController, FakePlayerApi.playerLists, toggleTheme)
         }
         composable(
             "${Screen.Details.route}/{id}/{title}/{location}",

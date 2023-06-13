@@ -73,7 +73,7 @@ fun ItemDogCard(player: Player, onItemClicked: (player: Player) -> Unit) {
                 contentScale = ContentScale.Crop
             )
 
-            Spacer(modifier = Modifier.width(16.dp))
+
 
             Column(modifier = Modifier.align(Alignment.CenterVertically)) {
                 Text(
@@ -83,18 +83,24 @@ fun ItemDogCard(player: Player, onItemClicked: (player: Player) -> Unit) {
                     fontWeight = FontWeight.Bold,
                     style = typography.subtitle1
                 )
-                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = buildString {
+                        append(player.country)
+                    },
+                    modifier = Modifier.padding(16.dp, 12.dp, 12.dp, 0.dp),
+                    color = MaterialTheme.colors.surface,
+                    style = typography.caption
+                )
                 Text(
                     text = buildString {
                         append("Rank: ")
                         append(player.rank.toString())
                     },
-
-
-                    modifier = Modifier.padding(0.dp, 12.dp, 12.dp, 0.dp),
+                    modifier = Modifier.padding(16.dp, 12.dp, 12.dp, 0.dp),
                     color = MaterialTheme.colors.surface,
                     style = typography.caption
                 )
+
 //                Text(
 //                    text = buildString {
 //                        append("Age: ")
