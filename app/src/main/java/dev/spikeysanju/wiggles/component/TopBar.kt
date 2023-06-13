@@ -29,10 +29,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Switch
+import androidx.compose.material.SwitchColors
+import androidx.compose.material.SwitchDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -42,18 +45,28 @@ import androidx.compose.ui.unit.sp
 import dev.spikeysanju.wiggles.R
 
 @Composable
-fun TopBar(onToggle: () -> Unit) {
+fun TopBar(checked: Boolean, onToggle: (Boolean) -> Unit) {
 
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(22.dp, 24.dp, 36.dp, 0.dp),
-            horizontalArrangement = Arrangement.Start
+                .padding(22.dp, 24.dp, 22.dp, 0.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Text(text = "PSA World Tour", fontSize = 26.sp)
-            //todo make blue/red toggle-button for men/women and filter content accordingly. align right
-            val checkedState = remember { mutableStateOf(true) }
-            Switch(checked = checkedState.value, onCheckedChange = {checkedState.value = it})
+            Switch(
+                checked = checked,
+                onCheckedChange = {
+                    onToggle(it)
+                },
+                colors = SwitchDefaults.colors(
+                    checkedThumbColor = colorResource(R.color.blue),
+                    uncheckedThumbColor = colorResource(R.color.red),
+                    uncheckedTrackColor = colorResource(R.color.red),
+                    checkedTrackColor = colorResource(R.color.blue)
+                )
+            )
         }
  }
 

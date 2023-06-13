@@ -23,6 +23,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -34,24 +39,34 @@ import dev.spikeysanju.wiggles.model.Player
 fun Home(navController: NavHostController, playerList: List<Player>, toggleTheme: () -> Unit) {
 
 
-    Column(modifier = Modifier.fillMaxHeight().fillMaxWidth()) {
+    Column(modifier = Modifier
+        .fillMaxHeight()
+        .fillMaxWidth()) {
+        var checked by remember {
+            mutableStateOf(true)
+        }
         TopBar(
+            checked,
             onToggle = {
-                //todo filter between Men and Women
+                checked = it
             }
         )
+        val players = remember(checked) {
+            derivedStateOf {
+                playerList
+                    .filter { if (checked) it.gender == "Men" else it.gender == "Women" }
+                    .sortedBy { it.rank }
+            }
+        }
         Spacer(modifier = Modifier.height(8.dp))
         LazyColumn {
-
-            items(playerList) {
-                playerList.forEach {
-                    ItemDogCard(
-                        it,
-                        onItemClicked = { player ->
-                            navController.navigate("details/${player.id}/${player.name}/${player.born}")
-                        }
-                    )
-                }
+            items(players.value) {
+                ItemDogCard(
+                    it,
+                    onItemClicked = { player ->
+                        navController.navigate("details/${player.id}/${player.name}/${player.born}")
+                    }
+                )
             }
         }
     }

@@ -77,14 +77,20 @@ fun ItemDogCard(player: Player, onItemClicked: (player: Player) -> Unit) {
                     fontWeight = FontWeight.Bold,
                     style = typography.subtitle1
                 )
-                Text(
-                    text = buildString {
-                        append(player.country)
-                    },
-                    modifier = Modifier.padding(16.dp, 12.dp, 12.dp, 0.dp),
-                    color = MaterialTheme.colors.surface,
-                    style = typography.caption
-                )
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(start = 16.dp, top = 16.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = buildString {
+                            append(player.country)
+                        },
+                        color = MaterialTheme.colors.surface,
+                        style = typography.caption
+                    )
+                    GenderTag(player.gender)
+                }
                 Text(
                     text = buildString {
                         append("Rank: ")
@@ -101,12 +107,6 @@ fun ItemDogCard(player: Player, onItemClicked: (player: Player) -> Unit) {
 
 
                 }
-            }
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.End
-            ) {
-                GenderTag(player.gender)
             }
         }
     }
