@@ -25,10 +25,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import dev.spikeysanju.wiggles.component.ItemDogCard
 import dev.spikeysanju.wiggles.component.TopBar
-import dev.spikeysanju.wiggles.model.Dog
+import dev.spikeysanju.wiggles.model.Player
 
 @Composable
-fun Home(navController: NavHostController, dogList: List<Dog>, toggleTheme: () -> Unit) {
+fun Home(navController: NavHostController, playerList: List<Player>, toggleTheme: () -> Unit) {
     LazyColumn {
         item {
             TopBar(
@@ -38,8 +38,8 @@ fun Home(navController: NavHostController, dogList: List<Dog>, toggleTheme: () -
             )
             Spacer(modifier = Modifier.height(8.dp))
         }
-        items(dogList) {
-            dogList.forEach {
+        items(playerList) {
+            playerList.forEach {
                 ItemDogCard(
                     it,
                     onItemClicked = { dog ->

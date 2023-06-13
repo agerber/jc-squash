@@ -53,7 +53,7 @@ fun WigglesMain(toggleTheme: () -> Unit) {
                 ) + fadeIn(animationSpec = tween(300))
             },
         ) {
-            Home(navController, FakeDogDatabase.dogList, toggleTheme)
+            Home(navController, FakeDogDatabase.playerLists, toggleTheme)
         }
         composable(
             "${Screen.Details.route}/{id}/{title}/{location}",

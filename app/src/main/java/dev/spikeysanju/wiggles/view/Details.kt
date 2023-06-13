@@ -92,7 +92,7 @@ fun DetailsView(id: Int) {
             .background(color = colorResource(id = R.color.background))
     ) {
 
-        val dog = FakeDogDatabase.dogList[id]
+        val dog = FakeDogDatabase.playerLists[id]
 
         // Basic details
         item {
@@ -122,7 +122,7 @@ fun DetailsView(id: Int) {
                 Title(title = "My Story")
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = about,
+                    text = bio,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp, 0.dp, 16.dp, 0.dp),

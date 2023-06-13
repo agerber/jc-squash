@@ -15,15 +15,17 @@
  */
 package dev.spikeysanju.wiggles.model
 
-data class Dog(
+data class PlayerOld(
     val id: Int,
+    val rank: Int,
     val name: String,
     val age: Double,
     val gender: String,
-    val color: String,
+    val country: String,
     val weight: Double,
-    val location: String,
+    val height: Double,
+    val born: String,
     val image: Int,
-    val about: String,
-    val owner: Owner
+    val bio: String,
+
 )

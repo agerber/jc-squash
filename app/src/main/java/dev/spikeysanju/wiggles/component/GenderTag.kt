@@ -32,7 +32,7 @@ import dev.spikeysanju.wiggles.R
 
 @Composable
 fun GenderTag(name: String) {
-    val color = if (name == "Male") R.color.blue else R.color.red
+    val color = if (name == "Men") R.color.blue else R.color.red
     ChipView(gender = name, colorResource = colorResource(id = color))
 }
 

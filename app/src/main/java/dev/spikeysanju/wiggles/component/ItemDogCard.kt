@@ -43,16 +43,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import dev.spikeysanju.wiggles.R
-import dev.spikeysanju.wiggles.model.Dog
+import dev.spikeysanju.wiggles.model.Player
 
 @Composable
-fun ItemDogCard(dog: Dog, onItemClicked: (dog: Dog) -> Unit) {
+fun ItemDogCard(player: Player, onItemClicked: (player: Player) -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
             .clip(RoundedCornerShape(16.dp))
-            .clickable(onClick = { onItemClicked(dog) }),
+            .clickable(onClick = { onItemClicked(player) }),
         elevation = 0.dp,
         backgroundColor = MaterialTheme.colors.onSurface
     ) {
@@ -62,7 +62,7 @@ fun ItemDogCard(dog: Dog, onItemClicked: (dog: Dog) -> Unit) {
                 .padding(16.dp)
         ) {
 
-            val image: Painter = painterResource(id = dog.image)
+            val image: Painter = painterResource(id = player.image)
             Image(
                 modifier = Modifier
                     .size(80.dp, 80.dp)
@@ -77,49 +77,47 @@ fun ItemDogCard(dog: Dog, onItemClicked: (dog: Dog) -> Unit) {
 
             Column(modifier = Modifier.align(Alignment.CenterVertically)) {
                 Text(
-                    text = dog.name,
+                    text = player.name,
                     modifier = Modifier.padding(0.dp, 0.dp, 12.dp, 0.dp),
                     color = MaterialTheme.colors.surface,
                     fontWeight = FontWeight.Bold,
                     style = typography.subtitle1
                 )
                 Spacer(modifier = Modifier.height(8.dp))
-
                 Text(
                     text = buildString {
-                        append(dog.age)
-                        append("yrs | ")
-                        append(dog.gender)
+                        append("Rank: ")
+                        append(player.rank.toString())
                     },
-                    modifier = Modifier.padding(0.dp, 0.dp, 12.dp, 0.dp),
+
+
+                    modifier = Modifier.padding(0.dp, 12.dp, 12.dp, 0.dp),
                     color = MaterialTheme.colors.surface,
                     style = typography.caption
                 )
+//                Text(
+//                    text = buildString {
+//                        append("Age: ")
+//                        append(player.age)
+//
+//
+//                    },
+//                    modifier = Modifier.padding(0.dp, 0.dp, 12.dp, 0.dp),
+//                    color = MaterialTheme.colors.surface,
+//                    style = typography.caption
+//                )
 
                 Row(verticalAlignment = Alignment.Bottom) {
 
-                    val location: Painter = painterResource(id = R.drawable.ic_location)
 
-                    Icon(
-                        painter = location,
-                        contentDescription = null,
-                        modifier = Modifier.size(16.dp, 16.dp),
-                        tint = Color.Red
-                    )
 
-                    Text(
-                        text = dog.location,
-                        modifier = Modifier.padding(8.dp, 12.dp, 12.dp, 0.dp),
-                        color = MaterialTheme.colors.surface,
-                        style = typography.caption
-                    )
                 }
             }
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.End
             ) {
-                GenderTag(dog.gender)
+                GenderTag(player.gender)
             }
         }
     }

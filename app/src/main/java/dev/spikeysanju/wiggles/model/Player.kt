@@ -19,13 +19,14 @@ data class Player(
     val id: Int,
     val rank: Int,
     val name: String,
-    val age: Double,
+    val age: Int,
     val gender: String,
-    val country: String,
+    val color: String,
     val weight: Double,
-    val height: Double,
-    val born: String,
+    val location: String,
     val image: Int,
     val bio: String,
+    val owner: Owner
+
 
 )
