@@ -25,15 +25,16 @@ object FakePlayerApi {
         Player(
             0,
             1,
-            "Egypt",
-            171,
-            "Ali Farag",
-            31,
-            "Men",
 
+            "Ali Farag",
+            "Egypt",
+            "Men",
+            R.drawable.ali,
+
+            171,
+            31,
             70,
 
-            R.drawable.ali,
             "Since graduating from Harvard University with a degree in Mechanical Engineering in 2014, Egypt’s Ali Farag has established himself as one of the most popular players on the PSA World Tour, and is now the World No.1.\n" +
                     "\n" +
                     "His captured his first title at the Open Du Gard in 2011 and swiftly followed that up with a crown at the Meersquashheroes Open a week later. A lone title came in 2012 before the Egyptian had to wait over two years for his next piece of silverware at the PSA International Championship which was his maiden PSA M25 title.\n" +
@@ -53,15 +54,16 @@ object FakePlayerApi {
         Player(
             1,
             1,
-            "Egypt",
-            167,
-            "Nouran Gohar",
-            25,
-            "Women",
 
+            "Nouran Gohar",
+            "Egypt",
+            "Women",
+            R.drawable.nouran,
+
+            167,
+            25,
             59,
 
-            R.drawable.nouran,
             "Nouran Gohar is one of that core group of high quality Egyptians, and ‘the Terminator’ took over the World No.1 spot in July 2020.\n" +
                     "\n" +
                     "She lifted her first Tour title at the Prague Open in December 2013 where she played to her seeding to see off Luie Fialova to triumph at just 16-years-of-age. Gohar earned another title the following year at the Irish Open before her superb victory over Omneya Abdel Kawy in the final of the Monte Carlo Classic elevated her into the world’s top 20 for the first time.\n" +
