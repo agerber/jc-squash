@@ -115,9 +115,8 @@ fun DetailsView(id: Int) {
         item {
             player.apply {
 
-                Spacer(modifier = Modifier.height(24.dp))
-                Title(title = "Play data")
-                Spacer(modifier = Modifier.height(16.dp))
+
+                Spacer(modifier = Modifier.height(26.dp))
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
