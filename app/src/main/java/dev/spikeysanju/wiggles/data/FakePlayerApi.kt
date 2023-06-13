@@ -48,7 +48,8 @@ object FakePlayerApi {
                     "Farag then went on to play in the final at the Suburban Collection Motor City Open to Ryan Cuskelly. Farag was also knocked out in the semi-finals of the Windy City Open to former World No.1 Mohamed ElShorbagy. The Egyptian also had two runner-up finishes to Frenchman Gregory Gaultier at both the Grasshopper Cup and Bellevue Classic.\n" +
                     "\n" +
                     "He started his 2017/18 campaign with a runner-up finish at the China Open, before winning the US Open, where he beat Mohamed ElShorbagy in the final. His next three tournaments ended at the hands of the World No.1, losing in the final to ElShorbagy in both the Channel VAS Championships and the Hong Kong Open. The Egyptian then won the Swedish Open, before finishing runner-up at the El Gouna International, losing out to Elshorbagy again, but this time, it was Marwan.\n" +
-                    "\n"
+                    "\n",
+            "egypt"
 
         ),
         Player(
@@ -77,7 +78,8 @@ object FakePlayerApi {
                     "A splendid breakout season was rounded off with a debut appearance at the PSA Dubai World Series Finals, where the teenager bowed out in the group stage. However, she made amends in the first tournament of the 2016/17 campaign as she defeated American Amanda Sobhy to capture the Hong Kong Open crown in August 2016 – her first World Series title – eventually rising into the world’s top two five months later.\n" +
                     "\n" +
                     "Gohar went on to feature in the China Squash Open final in 2016, where she missed out on the title to England’s Laura Massaro. The Egyptian also made the final of the Wadi Degla Open, losing out to Raneem El Welily over four games in the final. Gohar met El Welily once more, this time in the semi-final of the Windy City Open where she came up short. Gohar reached the semi-finals of the Orascom Development PSA Women’s World Championships, losing out to eventual winner Nour El Sherbini.\n" +
-                    "\n"
+                    "\n",
+            "egypt"
 
         )
     )

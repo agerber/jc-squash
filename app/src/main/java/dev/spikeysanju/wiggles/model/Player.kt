@@ -28,7 +28,8 @@ data class Player(
     val weight: Int,
     val age: Int,
 
-    val bio: String
+    val bio: String,
+    val location: String
 
 
 
