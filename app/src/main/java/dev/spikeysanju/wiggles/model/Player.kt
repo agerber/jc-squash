@@ -21,6 +21,7 @@ data class Player(
 
     val name: String,
     val country: String,
+    val born: String,
     val gender: String,
     val image: Int,
 
@@ -28,8 +29,8 @@ data class Player(
     val weight: Int,
     val age: Int,
 
-    val bio: String,
-    val location: String
+    val bio: String
+
 
 
 

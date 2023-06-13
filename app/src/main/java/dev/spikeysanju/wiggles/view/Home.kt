@@ -48,7 +48,7 @@ fun Home(navController: NavHostController, playerList: List<Player>, toggleTheme
                     ItemDogCard(
                         it,
                         onItemClicked = { player ->
-                            navController.navigate("details/${player.id}/${player.name}/${player.location}")
+                            navController.navigate("details/${player.id}/${player.name}/${player.born}")
                         }
                     )
                 }
