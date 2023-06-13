@@ -15,8 +15,8 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/wiggle_logo"
-        android:roundIcon="@drawable/wiggle_logo"
+        android:icon="@drawable/psa_logo"
+        android:roundIcon="@drawable/psa_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.dev.spikeysanju.wiggles">
