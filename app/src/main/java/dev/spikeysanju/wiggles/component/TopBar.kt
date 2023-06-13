@@ -15,6 +15,7 @@
  */
 package dev.spikeysanju.wiggles.component
 
+import android.widget.ToggleButton
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
@@ -27,6 +28,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Switch
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -47,6 +49,8 @@ fun TopBar(onToggle: () -> Unit) {
             horizontalArrangement = Arrangement.Start
         ) {
             Text(text = "PSA World Tour", fontSize = 26.sp)
+            //todo make blue/red toggle-button for men/women and filter content accordingly. align right
+            Switch(checked = true, onCheckedChange = {})
         }
  }
 
