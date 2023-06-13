@@ -31,6 +31,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Switch
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -50,7 +52,8 @@ fun TopBar(onToggle: () -> Unit) {
         ) {
             Text(text = "PSA World Tour", fontSize = 26.sp)
             //todo make blue/red toggle-button for men/women and filter content accordingly. align right
-            Switch(checked = true, onCheckedChange = {})
+            val checkedState = remember { mutableStateOf(true) }
+            Switch(checked = checkedState.value, onCheckedChange = {checkedState.value = it})
         }
  }
 
