@@ -91,13 +91,13 @@ fun DetailsView(id: Int) {
             .background(color = colorResource(id = R.color.background))
     ) {
 
-        val dog = FakePlayerApi.playerLists[id]
+        val player = FakePlayerApi.playerLists[id]
 
         // Basic details
         item {
-            dog.apply {
+            player.apply {
 
-                val dogImage: Painter = painterResource(id = dog.image)
+                val dogImage: Painter = painterResource(id = player.image)
                 Image(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -109,16 +109,16 @@ fun DetailsView(id: Int) {
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
-                DogInfoCard(name, gender, location)
+              //  DogInfoCard(name, gender, location)
             }
         }
 
         // My story details
         item {
-            dog.apply {
+            player.apply {
 
                 Spacer(modifier = Modifier.height(24.dp))
-                Title(title = "My Story")
+                Title(title = "Bio")
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = bio,
@@ -134,10 +134,10 @@ fun DetailsView(id: Int) {
 
         // Quick info
         item {
-            dog.apply {
+            player.apply {
 
                 Spacer(modifier = Modifier.height(24.dp))
-                Title(title = "Dog info")
+                Title(title = "Play data")
                 Spacer(modifier = Modifier.height(16.dp))
                 Row(
                     modifier = Modifier
@@ -145,42 +145,27 @@ fun DetailsView(id: Int) {
                         .padding(16.dp, 0.dp, 16.dp, 0.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    InfoCard(title = "Age", value = dog.age.toString().plus(" yrs"))
-                    InfoCard(title = "Color", value = color)
+                    InfoCard(title = "Age", value = player.age.toString().plus(" yrs"))
                     InfoCard(title = "Weight", value = weight.toString().plus("Kg"))
+                    InfoCard(title = "Born", value = born)
+
                 }
             }
         }
 
         // Owner info
         item {
-            dog.apply {
+            player.apply {
 
                 Spacer(modifier = Modifier.height(24.dp))
-                Title(title = "Owner info")
+
                 Spacer(modifier = Modifier.height(16.dp))
 
             }
         }
 
-        // CTA - Adopt me button
-        item {
-            Spacer(modifier = Modifier.height(36.dp))
-            Button(
-                onClick = { /* Do something! */ },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(52.dp)
-                    .padding(16.dp, 0.dp, 16.dp, 0.dp),
-                colors = ButtonDefaults.textButtonColors(
-                    backgroundColor = colorResource(id = R.color.blue),
-                    contentColor = Color.White
-                )
-            ) {
-                Text("Adopt me")
-            }
-            Spacer(modifier = Modifier.height(24.dp))
-        }
+
+
     }
 }
 
