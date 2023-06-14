@@ -29,7 +29,7 @@ import dev.spikeysanju.wiggles.navigation.Screen
 
 @ExperimentalAnimationApi
 @Composable
-fun PsaMain(toggleTheme: () -> Unit) {
+fun PsaMain() {
     val navController = rememberAnimatedNavController()
     AnimatedNavHost(navController, startDestination = Screen.Home.route) {
         composable(
@@ -53,7 +53,7 @@ fun PsaMain(toggleTheme: () -> Unit) {
                 ) + fadeIn(animationSpec = tween(300))
             },
         ) {
-            Home(navController, FakePlayerApi.playerLists, toggleTheme)
+            Home(navController, FakePlayerApi.playerLists)
         }
         composable(
             "${Screen.Details.route}/{id}/{title}/{location}",

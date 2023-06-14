@@ -32,26 +32,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val currentTheme = isSystemInDarkTheme()
-            val toggleTheme: () -> Unit = {
-                if (currentTheme) setDayTheme() else setDarkTheme()
-            }
             MyTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    PsaMain(toggleTheme)
+                    PsaMain()
                 }
             }
         }
     }
 
-    private fun setDayTheme() {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-    }
 
-    private fun setDarkTheme() {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-    }
 }
 
 @ExperimentalAnimationApi
@@ -59,6 +49,6 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-        PsaMain(toggleTheme = { })
+        PsaMain()
     }
 }

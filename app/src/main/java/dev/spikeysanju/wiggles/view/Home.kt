@@ -36,7 +36,7 @@ import dev.spikeysanju.wiggles.component.TopBar
 import dev.spikeysanju.wiggles.model.Player
 
 @Composable
-fun Home(navController: NavHostController, playerList: List<Player>, toggleTheme: () -> Unit) {
+fun Home(navController: NavHostController, playerList: List<Player>) {
 
 
     Column(modifier = Modifier
