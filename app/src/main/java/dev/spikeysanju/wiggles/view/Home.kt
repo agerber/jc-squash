@@ -31,7 +31,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import dev.spikeysanju.wiggles.component.ItemDogCard
+import dev.spikeysanju.wiggles.component.ItemPlayerCard
 import dev.spikeysanju.wiggles.component.TopBar
 import dev.spikeysanju.wiggles.model.Player
 
@@ -61,7 +61,7 @@ fun Home(navController: NavHostController, playerList: List<Player>) {
         Spacer(modifier = Modifier.height(8.dp))
         LazyColumn {
             items(players.value) {
-                ItemDogCard(
+                ItemPlayerCard(
                     it,
                     onItemClicked = { player ->
                         navController.navigate("details/${player.id}/${player.name}/${player.born}")

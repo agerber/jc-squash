@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 @Preview("Dark Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun DarkPreview() {
-    MyTheme(darkTheme = true) {
+    MyTheme() {
         PsaMain()
     }
 }

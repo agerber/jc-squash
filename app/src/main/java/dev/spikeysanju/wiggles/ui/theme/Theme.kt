@@ -49,12 +49,10 @@ onSurface = Color.Black,
 )
 
 @Composable
-fun MyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
-    val colors = if (darkTheme) {
+fun MyTheme( content: @Composable() () -> Unit) {
+    val colors =
         DarkColorPalette
-    } else {
-        LightColorPalette
-    }
+
 
     MaterialTheme(
         colors = colors,

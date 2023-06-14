@@ -40,7 +40,7 @@ import androidx.compose.ui.unit.dp
 import dev.spikeysanju.wiggles.model.Player
 
 @Composable
-fun ItemDogCard(player: Player, onItemClicked: (player: Player) -> Unit) {
+fun ItemPlayerCard(player: Player, onItemClicked: (player: Player) -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
